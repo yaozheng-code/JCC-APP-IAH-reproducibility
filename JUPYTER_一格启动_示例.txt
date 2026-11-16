@@ -1,0 +1,20 @@
+# Jupyter一次粘贴运行（适用于先前WSL路径）
+
+from pathlib import Path
+import sys, zipfile, subprocess
+
+ZIP_FILE=Path("/mnt/d/Desktop/论文/白蛋白/JCC_APP_IAH_MIMICIV_v3_1_对外复现代码包_v2.zip")
+TARGET=Path.home()/"mimic-project"/"jcc_reproducibility_code_v1"
+if not ZIP_FILE.is_file():
+    raise FileNotFoundError(f"下载ZIP后放到：{ZIP_FILE.parent}")
+TARGET.mkdir(parents=True,exist_ok=True)
+with zipfile.ZipFile(ZIP_FILE) as archive:
+    archive.extractall(TARGET)
+SCRIPT=TARGET/"JCC_APP_IAH_MIMICIV_v3_1_REPRO_RELEASE_v2"/"run_all.py"
+subprocess.run(
+    [sys.executable,str(SCRIPT),"--database","mimiciv","--bootstrap","200"],
+    check=True
+)
+
+# 输出位置：~/mimic-project/results/jcc_app_iah_native_approx_reproduction
+# 仅分享汇总结果；患者级CSV保留在本地授权环境。

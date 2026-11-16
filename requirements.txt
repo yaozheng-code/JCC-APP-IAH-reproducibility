@@ -1,0 +1,8 @@
+# Python >=3.11; installed versions are recorded in each user's environment.
+numpy>=1.26,<3
+pandas>=2.2,<4
+psycopg[binary]>=3.2,<4
+scipy>=1.11,<2
+statsmodels>=0.14.4,<1
+scikit-learn>=1.5,<2
+matplotlib>=3.9,<4

@@ -1,0 +1,14 @@
+{
+  "reference_kind": "Published/previously audited aggregate-level reference only. NOT patient data.",
+  "MIMIC_version": "3.1",
+  "expected_candidate_stays": 819,
+  "expected_final_icu_stays": 641,
+  "expected_APP_below_60": 367,
+  "expected_APP_below_50": 180,
+  "expected_28day_deaths": 225,
+  "expected_hospital_deaths": 225,
+  "prior_adjusted_APP_below60_OR": 2.031032,
+  "record_level_disagreements_are_not_repaired": true,
+  "aggregate_comparison_does_not_prove_identical_patient_data": true,
+  "purpose": "Aggregate reference metrics; live reproduced estimates are not forced to match."
+}
